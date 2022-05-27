@@ -42,22 +42,22 @@ def main():
     # 🐳 Task 2: ETH 转账
 
     # 接入 Rinkeby Testnet
-    w3 = get_w3_by_network('rinkeby')
+    w3 = get_w3_by_network('kovan')
 
     # 测试地址
-    from_address = '0x365a800a3c6a6B73B29E052fd4F7e68BFD45A086'
+    from_address = '0x73AD7Cc4C20162C2E59d5a8053bd81CF2bc57a99'
 
     # 测试私钥， 千万不能泄漏你自己的私钥信息
-    private_key = 'e2facfbd1f0736318382d87b81029b05b7650ba17467c844cea5998a40e5bbc2'
+    private_key = '474e2e73d2db23eb49835ddcbfd452c73b86300633e320aae60e879f02591176'
 
     # 测试转入地址
-    target_address = '0x8888a4E88f66f9C9FCE8c25F193617F3a3aB0760'
+    target_address = '0xB07Fd53500a844FE1E7EAb77EF4aAe4ffAD56a6D'
 
     # 转账 ETH 金额
-    amount = 0.008
+    amount = 0.001
 
     # Rinkeby Chain ID
-    chainId = 4
+    chainId = 42
 
     # 查询地址 ETH余额
     balance = w3.eth.get_balance(from_address) / 1e18
