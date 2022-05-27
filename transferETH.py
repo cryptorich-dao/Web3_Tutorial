@@ -3,7 +3,7 @@
 from web3 import Web3
 
 # Your Infura Project ID
-INFURA_SECRET_KEY = '7fe353dd8591489db345b657ebe5c910'
+INFURA_SECRET_KEY = '017103a4ba6b4c50a27cca91f0fb3b71'
 
 
 # get w3 endpoint by network name
@@ -43,7 +43,8 @@ def main():
 
     # 接入 Rinkeby Testnet
     w3 = get_w3_by_network('kovan')
-
+    print(w3.isConnected())
+    
     # 测试地址
     from_address = '0x73AD7Cc4C20162C2E59d5a8053bd81CF2bc57a99'
 
