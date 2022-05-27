@@ -60,8 +60,8 @@ def main():
     chainId = 97
 
     # 查询地址 ETH余额
-    balance = w3.eth.get_balance(from_address) / 1e18
-    print(f'当前地址余额: {balance = } BNB')
+    # balance = w3.eth.get_balance(from_address) / 1e18
+    # print(f'当前地址余额: {balance = } BNB')
 
     result = transfer_eth(w3, from_address, private_key, target_address, amount, chainId=chainId)
     print(result)
