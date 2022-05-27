@@ -11,6 +11,7 @@ def get_w3_by_network(network='mainnet'):
     w3 = Web3(Web3.HTTPProvider(infura_url))
     return w3
 
+
 def main():
     
     # 🐳 Task 1: 接入并读取区块链信息
