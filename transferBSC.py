@@ -23,15 +23,15 @@ def transfer_eth(w3,from_address,private_key,target_address,amount,gas_price=5,g
         'to': target_address,
         'value': w3.toWei(amount, 'ether'),
         'gas': gas_limit,
-        # 'gasPrice': w3.toWei(gas_price, 'gwei'),
+        'gasPrice': w3.toWei(gas_price, 'gwei'),
         'maxFeePerGas': w3.toWei(gas_price, 'gwei'),
         'maxPriorityFeePerGas': w3.toWei(gas_price, 'gwei'),
         'chainId': chainId,
-        
     }
     try:
         signed_tx = w3.eth.account.signTransaction(params, private_key=private_key)
-        txn = w3.eth.sendRawTransaction(signed_tx.rawTransaction)
+        # txn = w3.eth.sendRawTransaction(signed_tx.rawTransaction)
+        txn = w3.eth.sendSignedTransaction(signed_tx.rawTransaction)
         return {'status': 'succeed', 'txn_hash': w3.toHex(txn), 'task': 'Transfer ETH'}
     except Exception as e:
         return {'status': 'failed', 'error': e, 'task': 'Transfer ETH'}
